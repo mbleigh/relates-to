@@ -34,6 +34,7 @@ end
 @group.users.leaders # => [@user]
 
 # TODO: generator for relationships table
+# TODO: default nature
 
 
 Copyright (c) 2008 Michael Bleigh, released under the MIT license

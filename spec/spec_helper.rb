@@ -6,9 +6,9 @@ ActiveRecord::Base.logger = Logger.new(plugin_spec_dir + "/debug.log")
 load(File.dirname(__FILE__) + '/schema.rb')
 
 class RelatableUser < ActiveRecord::Base
-  relates_to :relatable_forums, :map => {:administered => :administrator, :moderated => :moderator}
+  relates_to :relatable_forums, :as => [:administrator, :moderator]
 end
 
 class RelatableForum < ActiveRecord::Base
-  has_related :relatable_users, :map => {:administered => :administrator, :moderated => :moderator}
+  has_related :relatable_users, :as => [:administrator, :moderator]
 end

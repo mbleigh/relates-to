@@ -5,8 +5,6 @@ module ActiveRecord
     end
     
     module ClassMethods
-      # :map => {:administered => :administrators, :moderated => :moderators}
-      # :default => :administrator
       def relates_to(plural_model_name, options = {})
         Relationship.add_related(plural_model_name.to_s.singularize.classify)
         has_many :relator_relationships, :conditions => {:relator_type => self.to_s}, 
