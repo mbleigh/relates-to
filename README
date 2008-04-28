@@ -1,0 +1,39 @@
+RelatesTo
+=========
+
+Relates To provides easy ways to have dual polymorphic bindings between objects
+with 'natures' included. For instance, if you have users and groups, a user might
+be related to a group as a leader. This plugin is designed to provide simple-to-use
+association-like methods to set up relationships and provide all of the necessary
+helper methods that go with.
+
+
+Example
+=======
+
+class User < ActiveRecord::Base
+  relates_to :groups, :as => [:leader, :member]
+end
+
+class Group < ActiveRecord::Base
+  has_related :users, :as => [:leader, :member]
+end
+
+@user = User.find(:first)
+@group = Group.find(:first)
+
+@user.relates_to(@group, :as => :leader)
+@user.groups # => [@group]
+# TODO
+@user.groups.as_member # => []
+@user.groups.as_leader # => [@group]
+
+@group.users # => [@user]
+# TODO
+@group.users.members # => []
+@group.users.leaders # => [@user]
+
+# TODO: generator for relationships table
+
+
+Copyright (c) 2008 Michael Bleigh, released under the MIT license
