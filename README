@@ -36,5 +36,10 @@ end
 # TODO: generator for relationships table
 # TODO: default nature
 
+Resources
+=========
 
-Copyright (c) 2008 Michael Bleigh, released under the MIT license
+GitHub: http://github.com/mbleigh/relates-to
+Lighthouse: http://mbleigh.lighthouseapp.com/projects/10498-relates-to
+
+Copyright (c) 2008 Michael Bleigh (http://mbleigh.com/) and Intridea Inc. (http://intridea.com/), released under the MIT license
